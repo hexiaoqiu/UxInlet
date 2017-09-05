@@ -35,9 +35,9 @@ function u_X = UxInlet(y,z)
         u_X = zeros(outputSize);
 
 % Setup Build-in variabels  
-        U_max   = 1.6;    % [m/s]
-        Width   = 100;    % [m]
-        Height  = 100;    % [m]
+        U_max   = 1.6;      % [m/s]
+        Width   = 50e-6;    % [m]
+        Height  = 50e-6;    % [m]
         n_order = 10;
 % call func to calculate the velocity for each position
         for index = 1:1:nLoop
