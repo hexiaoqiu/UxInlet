@@ -18,7 +18,7 @@ function volumeIn = flowRateVolumetric( maxVelocity )
         b         = Width / 2;
         c         = Height / 2;
         viscosity = 1.002e-3;
-        n_order   = 20;
+        n_order   = 100;
 
         % first step: calculate the pression derivative on main flow direction (x direction)
         y_0  = 0;
