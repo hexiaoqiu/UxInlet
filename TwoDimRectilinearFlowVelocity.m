@@ -62,14 +62,17 @@ function u_x = TwoDimRectilinearFlowVelocity(y, z, U_max, Width, Height, n_order
         Px = U_max / ( -1/(2*viscosity)*(c^2)*(first_term + series_term) );
 
 % fourth step: calculating the series term in parentheses
-        first_term = 1 - (z/c)^2 ;
-        series_term = 0;
-        for k = 1:1:n_order
-                series_term = series_term + ...,
-                               4*( (-1)^k / aK(k)^3 ) * ...,
-                               ( cosh(aK(k)*y/c) / cosh(aK(k)*b/c) ) * ...,
-                                cos(aK(k)*z/c);
-        end
-        u_x = -1/(2*viscosity) * Px * (c^2) * (first_term + series_term);
-        
+        if (y == b)||(z == c)
+                u_x = 0;
+        else
+                first_term = 1 - (z/c)^2 ;
+                series_term = 0;
+                for k = 1:1:n_order
+                        series_term = series_term + ...,
+                                4*( (-1)^k / aK(k)^3 ) * ...,
+                                ( cosh(aK(k)*y/c) / cosh(aK(k)*b/c) ) * ...,
+                                        cos(aK(k)*z/c);
+                end
+                u_x = -1/(2*viscosity) * Px * (c^2) * (first_term + series_term);
+        end    
 end
