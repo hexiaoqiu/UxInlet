@@ -1,7 +1,7 @@
 function u_x = TwoDimRectilinearFlowVelocity(y, z, U_max, Width, Height, n_order)
-%myFun - Description
+%TwoDimRectilinearFlowVelocity - Description
 %
-% Syntax: dimensional velocity on inlet = VelocityInletSquare(input)
+% Syntax: dimensional velocity on inlet = TwoDimRectilinearFlowVelocity(input)
 % Inout arguments: z        ->  z coordinate dimensional height
 %                  y        ->  y coordinate dimensional width
 %                  U_max    ->  the center line velicity
